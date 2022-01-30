@@ -1,0 +1,24 @@
+<div class="container pt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item text-decoration-none"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Khóa Học</li>
+        </ol>
+      </nav>
+</div>
+<div class="container-fluid">
+    <div class="row" >
+        <!-- <div class="col-6 col-lg-3"> -->
+            <!-- <div class="row"> -->
+                <div class="col-6 col-lg-3 pt-3" ng-repeat="x in subjects">
+                <div class="card">
+                    <img src="./lib/images/logos/{{x.Logo}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{x.Name}}</h5>
+                    <a href="#!/kiemtra/{{x.Id}}" class="btn btn-primary">Làm Bài</a>
+                    </div>
+                </div>
+                </div>
+            <!-- </div> -->
+    </div>
+</div>

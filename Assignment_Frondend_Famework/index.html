@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPT Polytechnic</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/style/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/7224b82f79.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body ng-app="asm">
+    <div class="container-fluid">
+        <div class="bg-success" style="width: 100%;">
+            <div class="container bg-blue">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+                        <div class="container">
+                            <a class="navbar-brand" href="#!/">
+                                <a href="#!/"><img src="https://caodang.fpt.edu.vn/wp-content/uploads/logo-trang.png" alt="" width="150" class="d-inline-block align-text-top"></a>                     
+                            </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item px-3">
+                                <a class="nav-link active fw-bold" aria-current="page" href="#!/">TRANG CHỦ</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#!/khoa-hoc">KHÓA HỌC</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#!gioi-thieu">GIỚI THIỆU</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#!lien-he">LIÊN HỆ</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#!gop-y">GÓP Ý</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#!hoi-dap">HỎI ĐÁP</a>
+                            </li>
+                            </ul>
+                            <span class="navbar-text text-d">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-3">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        ACCOUNT
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item bg-white text-dark" href="dangky.html">Đăng ký</a></li>
+                                        <li><a class="dropdown-item bg-white text-dark" href="dangnhap.html">Đăng nhập</a></li>
+                                        <li><a class="dropdown-item bg-white text-dark" href="quenmatkhau.html">Quên mật khẩu</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item bg-white text-dark" href="dangnhap.html">Đăng xuất</a></li>
+                                        <li><a class="dropdown-item bg-white text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#">Đổi mật khẩu</a></li>
+                                        <li><a class="dropdown-item bg-white text-dark" href="capnhattaikhoan.html">Cập nhật tài khoản</a></li>
+                                    </ul>
+                                    </li>
+                            </ul>
+                        </span>
+                        </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div ng-view></div>
+        <div class="container-fluid bg-success mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="bg-success p-3 text-center" style="letter-spacing : 3px">
+                    <h5>
+                        <span style="color: darkgrey;">FPT PolyTechnic</span>
+                        <span style="color: white;">Assiment</span>
+                        <span style="color: darkgrey;">in</span>
+                        <span style="color: white;">Nguyễn Chí Công</span>
+                    </h5>
+                    <h6 style="color:darkgrey">© 2022 No Copyright</h6>
+                    <a href="https://www.facebook.com/cng2002" class="bi bi-facebook text-light fs-4"></a>
+                    <a href="https://github.com/CongDzai2202" class="bi bi-github text-light fs-4"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="./lib/database/Subjects.js"></script>
+    <script src="./lib/database/Quizs/ADAV.js"></script>
+    <script>
+        var app = angular.module('asm', ['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider
+            .when("/",{
+                templateUrl:"./main/trangchu.html",
+                controller: "HomeController"
+            })
+            .when("/khoa-hoc",{
+                templateUrl:"./main/khoahoc.html",
+                controller: "HomeController"
+            })
+            .when("/gioi-thieu",{
+                templateUrl:"./main/gioithieu.html",
+                // controller: "HomeController"
+            })
+            .when("/kiemtra/:subjectId",{
+                templateUrl:"./main/kiemtra.html",
+                controller: "TestADAV"
+            })
+            .when("/lien-he",{
+                templateUrl:"./main/lienhe.html",
+                // controller: "HomeController"
+            })
+            .when("/hoi-dap",{
+                templateUrl:"./main/hoidap.html",
+                // controller: "HomeController"
+            })
+            .when("/gop-y",{
+                templateUrl:"./main/gopy.html",
+                // controller: "HomeController"
+            })
+            
+        });
+        app.controller("HomeController", function($scope){
+            $scope.subjects = GlobalSubjects;
+        });
+        app.controller("TestADAV",function($scope,$routeParams)
+        {
+            $scope.subjects = GlobalSubjects;
+            $scope.quizs = eval($routeParams.subjectId + "Questions");
+        });
+    </script>
+</body>
+</html>

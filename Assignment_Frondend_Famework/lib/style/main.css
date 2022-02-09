@@ -27,3 +27,8 @@ ul.breadcrumb {
     color: #01447e;
     text-decoration: underline;
     }
+    p {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+      }

@@ -28,14 +28,22 @@
         <span class="carousel-control-next-icon"></span>
         </button>
     </div>
+    <div class="row pt-5">
+        <div class="col-4">
+            <div class="form-group">
+                <label for="">Tìm Kiếm</label>
+                <input type="text" ng-model="keyword" ng-keyup="changeKeyword()" placeholder="Tìm kiếm môn học">
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row pt-5" >
-                    <div class="col-6 col-lg-3 pt-3" ng-repeat="x in subjects">
+                    <div class="col-6 col-lg-4 pt-3" ng-repeat="x in subjects">
                     <div class="card">
                         <img src="./lib/images/logos/{{x.Logo}}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">{{x.Name}}</h5>
-                        <a href="#!/kiemtra/{{x.Id}}" class="btn btn-primary">Làm Bài</a>
+                        <a href="#!/kiemtra/{{x.Code}}" class="btn btn-primary">Làm Bài</a>
                         </div>
                     </div>
                     </div>

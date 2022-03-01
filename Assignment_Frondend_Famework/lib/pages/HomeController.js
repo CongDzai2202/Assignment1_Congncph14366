@@ -9,6 +9,7 @@ window.HomeController =  function($scope,$http){
                 $scope.subjects = response.data;
             }
         })
+        // aaa
     }
     $http.get(subjectApiUrl).then(function(response){
         if(response.statusText == "OK"){
